@@ -1,6 +1,7 @@
 import React from "react";
 
-const Pokeinfo=()=>{
+const Pokeinfo=({ data })=>{
+    console.log(data)
     return(
         <>
             <h1>JigglyPuff</h1>

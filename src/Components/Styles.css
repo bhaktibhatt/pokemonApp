@@ -118,10 +118,10 @@ body{
 .card:active { 
     transform: scale(0.98);
 }
-.card img{
+/* .card img{
     height: 50px;
     width: auto;
-}
+} */
 .right-content{
 	width: 50%;
 	text-align: center;
