@@ -1,30 +1,41 @@
 import React from "react";
 
-const Pokeinfo=({ data })=>{
+const Pokeinfo = ({ data }) => {
     console.log(data)
-    return(
-        <>
-            <h1>JigglyPuff</h1>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/39.svg" alt="" />
-            <div className="abilities">
-                <div className="group">
-                    <h2>cute-charm</h2>
+    return (
+        <>{
+            (!data) ? "" : (
+            <>
+                <h1>{data.name}</h1>
+                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
+                <div className="abilities">
+                    {
+                        data.abilities.map(poke=>{
+                            return(
+                                <>
+                                    <div className="group">
+                                        <h2>{poke.ability.name}</h2>
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
                 </div>
-                <div className="group">
-                    <h2>competitive</h2>
+                <div className="base-stats">
+                    {
+                        data.stats.map(poke=>{
+                            return(
+                                <>
+                                    <h3>{poke.stat.name}:{poke.base_stat}</h3>
+                                </>
+                            )
+                        })
+                    }
                 </div>
-                <div className="group">
-                    <h2>friend-guard</h2>
-                </div>
-            </div>
-            <div className="base-stats">
-                <h3>Hp:115</h3>
-                <h3>attack:45</h3>
-                <h3>defense:20</h3>
-                <h3>special-attack:45</h3>
-                <h3>special-defense:25</h3>
-                <h3>speed:20</h3>
-            </div>
+            </>
+            )
+        }
+
         </>
     )
 }
