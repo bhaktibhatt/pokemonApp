@@ -122,6 +122,9 @@ body{
     height: 50px;
     width: auto;
 } */
+.card h2{
+	text-transform: capitalize;
+}
 .right-content{
 	width: 50%;
 	text-align: center;
